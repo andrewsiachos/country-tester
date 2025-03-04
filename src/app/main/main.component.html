@@ -1,0 +1,66 @@
+<div id="main-wrapper" [class]="{
+  'light':themeSetter == true,
+  'dark': themeSetter == false
+}">
+
+  <div id="search-filter">
+    <div id="inputContainer">
+      <label for="searchCountry"></label>
+      <input 
+      type="text" 
+      id="searchCountry" 
+      placeholder="Search for a country..."
+      [(ngModel)]="inputValue"
+      (keydown.enter)="handleInput()">
+    </div>
+
+    <div id="selectContainer">
+      <label for="options"></label>
+    <select name="options" id="options">
+      <option value="" selected disabled hidden>Filter By Region</option>
+      @for (x of selectOptions; track $index) {
+        <option [value]="x" (click)="onSelectRegion($event)">{{x}}</option>
+      }
+    </select>
+    </div>
+    
+    
+  </div>
+
+  <section id="countryList">
+    <!--
+    @for (country of countries; track $index) {
+      @if(country.name.common !== 'Albania'){
+        <div class="country-item">
+          <img [src]="country.flags.png" alt="Germany flag">
+
+          <div class="country-properties">
+            <h2>{{country.name.common}} </h2>
+            <p><span>Population:</span> {{country.population}}</p>
+            <p><span>Region:</span> {{country.region}}</p>
+            <p><span>Capital:</span> {{country.capital}}</p>
+          </div>  
+        </div>
+      }
+      
+      
+    }
+      -->
+    
+    @for (x of filteredCountries; track $index) {
+      <div class="country-item" (click)="countryClick(x.name)">
+        <img [src]='x.flag' [alt]="x.name +' flag'">
+  
+        <div class="country-properties">
+          <h2>{{x.name}} </h2>
+          <p><span>Population:</span> {{x.population | number}} </p>
+          <p><span>Region:</span> {{x.region}} </p>
+          <p><span>Capital:</span> {{x.capital}} </p>
+        </div>
+      </div>
+    }
+    
+    
+  </section>
+</div>
+

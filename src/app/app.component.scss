@@ -1,0 +1,70 @@
+@import './shared/variables';
+//FONT WEIGHTS 300 600 800
+.light{
+    background-color: $veryLightGray;
+    header{
+        background-color: $white;
+        .header-wrapper{
+            h1{
+                color: $veryDarkBlue;
+            }
+            button{
+                background-color: $veryLightGray;
+            }
+        }
+    }
+    main{
+        
+    }
+}
+.dark{
+    background-color: $veryDarkBlueBackground;
+    header{
+        background-color: $darkBlue;
+        .header-wrapper{
+            h1{
+                color: $white;
+            }
+            button{
+                background-color: black;
+                color: $white;
+            }
+        }
+    }
+    main{
+        
+    }
+}
+#wrapper{
+    header{
+        padding: 15px 0;
+        .header-wrapper{
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            h1{
+                font-size: 24px;
+            }
+            button{
+                cursor: pointer;
+                border: none;
+                padding: 10px;
+                &:hover{
+                    background-color: gray;
+                }
+            }
+        }
+    
+    }
+
+    main{
+        width: 1200px;
+        margin: 40px auto;
+        
+
+
+        
+    }
+}

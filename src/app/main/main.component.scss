@@ -1,0 +1,105 @@
+@import '../shared/variables';
+
+.light{
+
+        #countryList{
+            .country-item{
+                background-color: $white;
+                .country-properties{
+                    p{
+                        color: $veryDarkBlue;
+                    }
+                }
+            }
+        }
+    
+}
+.dark{
+    #search-filter{
+        input{
+            background-color: $darkBlue;
+            color: $white;
+        }
+    }
+    #selectContainer{
+        select{
+            background-color: $darkBlue;
+            color: $white;
+        }
+    }
+        #countryList{
+            .country-item{
+                background-color: $darkBlue;
+                .country-properties{
+                    h2{
+                        color: $white;
+                    }
+                    p{
+                        color: $darkGray;
+                        span{
+                            color: $white;
+                        }
+                    }
+                }
+                
+
+            }
+        }
+}
+
+
+#main-wrapper{
+    #search-filter{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        input{
+            display: block;
+            width: 400px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 1px 5px $darkBlue;
+        }
+
+    }
+    #selectContainer{
+        select{
+            border: none;
+            padding: 10px;
+        }
+    }
+
+    #countryList{
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: 265px 265px 265px 265px;
+        grid-column-gap: 46px;
+        grid-row-gap: 55px;
+        .country-item{
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            img{
+                display: block;
+                width: 100%;
+                height: 200px;
+            }
+            .country-properties{
+                padding: 30px;
+                h2{
+                    margin-bottom: 20px;
+                }
+                p{
+                    span{
+                        font-weight: 800;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
