@@ -1,1 +1,54 @@
-<p>country-details works!</p>
+<div id="wrapper" [class]="{
+    'light': themeSetter == true,
+    'dark': themeSetter == false
+}">
+    <button (click)="goBack()">Back</button>
+
+
+    <div id="countryDetails">
+        <div id="flagContainer">
+            <img [src]="currentCountry.flag" [alt]="currentCountry.name + ' name'">
+        </div>
+        <div id="countryInfo">
+
+            <h1>{{currentCountry.name}}</h1>
+
+            <div id="detailsList">
+                <div>
+                    <p>Native Name: <span>{{currentCountry.nativeName}}</span></p>
+                    <p>Population: <span>{{currentCountry.population}}</span></p>
+                    <p>Region: <span>{{currentCountry.region}}</span></p>
+                    <p>Sub Region: <span>{{currentCountry.subRegion}}</span></p>
+                    <p>Capital: <span>{{currentCountry.capital}}</span></p>
+                </div>
+
+                <div>
+                    <p>Top Level Domain: <span>{{currentCountry.topLevelDomain}}</span></p>
+                    <p>Currencies:
+                        @for (currency of currentCountry.currencies; track $index) {
+                            <span>{{currency.name}}, </span>
+                        }
+                    </p>
+                    <p>Languages: 
+                        @for (language of currentCountry.languages; track $index) {
+                            <span>{{language.name}}, </span>
+                        }
+                    </p>
+
+                </div>
+            </div>
+
+            <div id="borders">
+                <p id="borderTitle">Borders: </p>
+                <div id="bordersList">
+                    @for (border of currentCountry.borders; track $index) {
+                        <p (click)="onBorderClick(border)">{{border}}</p>
+                    }
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+

@@ -1,0 +1,100 @@
+@import '../shared/variables';
+.light{
+    button{
+        background-color: $white;
+    }
+}
+
+.dark{
+    button{
+        background-color: $darkBlue;
+        color: $veryLightGray;
+    }
+    *{
+        color: $white;
+    }
+    
+}
+#wrapper{
+    button{
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0px 2px 5px $darkBlue;
+        padding: 5px 20px;
+        cursor: pointer;
+    }
+
+    #countryDetails{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        #flagContainer{
+            width: 45%;
+            img{
+                display: block;
+                width: 100%;
+            }
+        }
+        #countryInfo{
+            width: 50%;
+
+            #detailsList{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 25px;
+                p{
+                    font-weight: 800;
+                    span{
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            #borders{
+                margin-top: 50px;
+                font-weight: 800;
+                display: flex;
+                #borderTitle{
+                    font-weight: 800;
+                    margin-right: 10px;
+                }
+                #bordersList{
+                    display: grid;
+                    grid-template-columns: 30% 30% 30%;
+                    grid-gap: 4px;
+                    p{
+                        font-weight: 300;
+                        cursor: pointer;
+                        border: 1px solid $darkGray;
+                        border-radius: 3px;
+                        padding: 1px 25px;
+                        height: 26px;
+                        overflow: hidden;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    #wrapper{
+        #countryDetails{
+            flex-direction: column;
+            #flagContainer{
+                width: 100%;
+            }
+            #countryInfo{
+                width: 100%;
+                #detailsList{
+                    flex-direction: column;
+                    div{
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+        }
+    }
+}

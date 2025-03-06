@@ -65,7 +65,7 @@ export class MainComponent implements OnInit{
   }
 
   countryClick(countryName: string){
-    console.log(countryName);
+    this.countriesService.selectedCountryName(countryName);
     this.router.navigate(['/country']);
   }
 }

@@ -1,5 +1,4 @@
 @import './shared/variables';
-//FONT WEIGHTS 300 600 800
 .light{
     background-color: $veryLightGray;
     header{
@@ -66,5 +65,22 @@
 
 
         
+    }
+
+    footer{
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px){
+    #wrapper{
+        header{
+            .header-wrapper{
+                width: 95%;
+            }
+        }
+        main{
+            width: 95%;
+        }
     }
 }
