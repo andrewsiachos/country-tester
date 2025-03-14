@@ -2,12 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { CountryModel } from '../shared/country.model';
 import { CountriesService } from '../countries.service';
-import jsonData from '../shared/data.json';
 import { Router } from '@angular/router';
-
+import { DecimalPipe } from '@angular/common';
 @Component({
   selector: 'app-country-details',
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './country-details.component.html',
   styleUrl: './country-details.component.scss'
 })
